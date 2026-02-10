@@ -1,11 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import SupportHeader from '../components/SupportHeader';
 import { useAuth } from '../context/AuthContext';
 
-export default function SignInPage() {
+function SignInForm() {
   const [email, setEmail] = useState('');
   const { setUser } = useAuth();
   const searchParams = useSearchParams();
@@ -80,5 +80,13 @@ export default function SignInPage() {
         <p>Powered by Canopy Stone Support</p>
       </footer>
     </div>
+  );
+}
+
+export default function SignInPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#f5f7fb] flex items-center justify-center"><p className="text-gray-500">Loading...</p></div>}>
+      <SignInForm />
+    </Suspense>
   );
 }

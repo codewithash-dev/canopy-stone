@@ -1,9 +1,10 @@
 'use client';
 
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useAuth } from '../context/AuthContext';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import ReferralModal from '../components/ReferralModal';
+import ReferralParamListener from './ReferralParamListener';
 
 const navItems = [
   { href: '/portal/order-now', label: 'Order Now', icon: 'cart' },
@@ -16,17 +17,8 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
   const { user, isReady, signOut } = useAuth();
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const [menuOpen, setMenuOpen] = useState(false);
   const [referralOpen, setReferralOpen] = useState(false);
-
-  // Open referral modal from ?referral=1 or when navigating from /portal/referral
-  useEffect(() => {
-    if (searchParams.get('referral') === '1') {
-      setReferralOpen(true);
-      router.replace(pathname || '/portal', { scroll: false });
-    }
-  }, [searchParams, pathname, router]);
 
   useEffect(() => {
     if (!isReady) return;
@@ -49,6 +41,9 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
 
   return (
     <div className="min-h-screen bg-white">
+      <Suspense fallback={null}>
+        <ReferralParamListener onOpenReferral={() => setReferralOpen(true)} />
+      </Suspense>
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
           <a href="/" className="flex items-center flex-shrink-0">

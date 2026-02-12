@@ -13,6 +13,21 @@ const Y_OFFSET = 48;
 export default function HomeAnimations() {
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // —— Hero background: pan/zoom effect ——
+      const heroBg = document.querySelector('[data-gsap-hero-bg]');
+      if (heroBg) {
+        gsap.fromTo(
+          heroBg,
+          { scale: 1.15, x: 0, y: 0 },
+          {
+            scale: 1,
+            duration: 2,
+            ease: 'power2.out',
+            delay: 0.1,
+          }
+        );
+      }
+
       // —— Hero: on-load timeline ——
       const hero = document.querySelector('[data-gsap="hero"]');
       if (hero) {
@@ -85,18 +100,6 @@ export default function HomeAnimations() {
         );
       });
 
-      // —— “Areas we serve” / dark sections: slide from sides ——
-      const areasSection = document.querySelector('#areas-serve');
-      if (areasSection) {
-        const left = areasSection.querySelector('[data-gsap="slide-left"]');
-        const right = areasSection.querySelector('[data-gsap="slide-right"]');
-        if (left) {
-          gsap.fromTo(left, { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: DURATION, ease: 'power3.out', scrollTrigger: { trigger: areasSection, start: 'top 82%', toggleActions: 'play none none none' } });
-        }
-        if (right) {
-          gsap.fromTo(right, { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: DURATION, ease: 'power3.out', scrollTrigger: { trigger: areasSection, start: 'top 82%', toggleActions: 'play none none none' } });
-        }
-      }
 
       // —— Contact form: fade up ——
       const contactSection = document.getElementById('contact');
@@ -106,6 +109,131 @@ export default function HomeAnimations() {
           gsap.fromTo(form, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out', scrollTrigger: { trigger: contactSection, start: 'top 80%', toggleActions: 'play none none none' } });
         }
       }
+
+      // —— Animate all buttons (bronze/brown colored buttons) ——
+      const buttons = document.querySelectorAll('[data-gsap-button], a[href*="/book-now"], a[href*="/order"], button[type="button"], button[type="submit"]');
+      buttons.forEach((btn, index) => {
+        // Initial animation on load
+        gsap.fromTo(
+          btn,
+          { opacity: 0, scale: 0.9, y: 10 },
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 0.5,
+            delay: 0.3 + index * 0.05,
+            ease: 'back.out(1.2)',
+          }
+        );
+
+        // Hover animation with bounce
+        btn.addEventListener('mouseenter', () => {
+          gsap.to(btn, {
+            scale: 1.05,
+            y: -2,
+            duration: 0.3,
+            ease: 'power2.out',
+          });
+        });
+
+        btn.addEventListener('mouseleave', () => {
+          gsap.to(btn, {
+            scale: 1,
+            y: 0,
+            duration: 0.3,
+            ease: 'power2.out',
+          });
+        });
+      });
+
+      // —— Animate bronze badges/tags ——
+      const bronzeBadges = document.querySelectorAll('[data-gsap-bronze]');
+      bronzeBadges.forEach((badge, index) => {
+        gsap.fromTo(
+          badge,
+          { opacity: 0, scale: 0.8, rotation: -5 },
+          {
+            opacity: 1,
+            scale: 1,
+            rotation: 0,
+            duration: 0.5,
+            delay: index * 0.1,
+            ease: 'back.out(1.4)',
+            scrollTrigger: {
+              trigger: badge,
+              start: 'top 90%',
+              toggleActions: 'play none none none',
+            },
+          }
+        );
+
+        // Hover pulse for badges
+        badge.addEventListener('mouseenter', () => {
+          gsap.to(badge, {
+            scale: 1.1,
+            rotation: 2,
+            duration: 0.3,
+            ease: 'power2.out',
+          });
+        });
+
+        badge.addEventListener('mouseleave', () => {
+          gsap.to(badge, {
+            scale: 1,
+            rotation: 0,
+            duration: 0.3,
+            ease: 'power2.out',
+          });
+        });
+      });
+
+      // —— Animate bronze text elements ——
+      const bronzeText = document.querySelectorAll('[data-gsap-bronze-text]');
+      bronzeText.forEach((el) => {
+        gsap.fromTo(
+          el,
+          { opacity: 0, scale: 0.95 },
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 0.6,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 90%',
+              toggleActions: 'play none none none',
+            },
+          }
+        );
+
+        // Hover pulse
+        el.addEventListener('mouseenter', () => {
+          gsap.to(el, { scale: 1.05, duration: 0.3, ease: 'power2.out' });
+        });
+        el.addEventListener('mouseleave', () => {
+          gsap.to(el, { scale: 1, duration: 0.3, ease: 'power2.out' });
+        });
+      });
+
+      // —— Animate stats numbers with bounce ——
+      const stats = document.querySelectorAll('[data-gsap-hero-item] p.font-bold');
+      stats.forEach((stat, index) => {
+        const text = stat.textContent || '';
+        if (text.match(/[\d$+]+/)) {
+          gsap.fromTo(
+            stat,
+            { opacity: 0, scale: 0.5 },
+            {
+              opacity: 1,
+              scale: 1,
+              duration: 0.8,
+              delay: 0.5 + index * 0.1,
+              ease: 'elastic.out(1, 0.5)',
+            }
+          );
+        }
+      });
     });
 
     return () => ctx.revert();

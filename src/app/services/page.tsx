@@ -172,10 +172,7 @@ export default function Services() {
           <div className="hidden md:flex items-center gap-8 text-[13px] tracking-wide">
             <a href="/" className="text-white/70 hover:text-white transition font-semibold">HOME</a>
             <a href="/services" className="text-white font-semibold">SERVICES & PRICING</a>
-            <a href="/portfolio" className="text-white/70 hover:text-white transition font-semibold">PORTFOLIO</a>
-            <a href="/getting-ready" className="text-white/70 hover:text-white transition font-semibold">GETTING READY</a>
             <a href="/knowledge-base" className="text-white/70 hover:text-white transition font-semibold">KNOWLEDGE BASE</a>
-            <a href="/gift-shop" className="text-white/70 hover:text-white transition font-semibold">GIFT SHOP</a>
             <a
               href="/order"
               className="bg-[#A67C52] text-white px-6 py-2 rounded-md hover:bg-[#8B6341] transition font-semibold"
@@ -284,9 +281,6 @@ export default function Services() {
               *Pricing based on square footage of the listing. Your brokerage may qualify for discounted rates — contact us to find out!
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href="/portfolio" className="border border-[#A67C52] text-[#A67C52] px-6 py-2 font-semibold rounded hover:bg-[#A67C52] hover:text-white transition">
-                SEE OUR PORTFOLIO
-              </a>
               <a href="/order" className="bg-[#A67C52] text-white px-6 py-2 font-semibold rounded hover:bg-[#8B6341] transition">
                 ORDER NOW
               </a>
@@ -316,7 +310,6 @@ export default function Services() {
               </div>
               <h4 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h4>
               <p className="text-gray-600 text-sm mb-2">{item.description}</p>
-              <a href="/portfolio" className="text-[#A67C52] font-semibold text-xs hover:underline">SEE EXAMPLES »</a>
             </div>
           ))}
         </div>
@@ -362,9 +355,6 @@ export default function Services() {
               *Pricing based on square footage of the listing. Your brokerage may qualify for discounted rates — contact us to find out!
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href="/portfolio" className="border border-[#A67C52] text-[#A67C52] px-6 py-2 font-semibold rounded hover:bg-[#A67C52] hover:text-white transition">
-                SEE OUR PORTFOLIO
-              </a>
               <a href="/order" className="bg-[#A67C52] text-white px-6 py-2 font-semibold rounded hover:bg-[#8B6341] transition">
                 ORDER NOW
               </a>
@@ -391,7 +381,6 @@ export default function Services() {
               </div>
               <h4 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h4>
               <p className="text-gray-600 text-sm mb-2">{item.description}</p>
-              <a href="/portfolio" className="text-[#A67C52] font-semibold text-xs hover:underline">SEE EXAMPLES »</a>
             </div>
           ))}
         </div>
@@ -425,9 +414,6 @@ export default function Services() {
               ]}
             />
             <div className="flex flex-wrap gap-4">
-              <a href="/portfolio" className="border border-[#A67C52] text-[#A67C52] px-6 py-2 font-semibold rounded hover:bg-[#A67C52] hover:text-white transition">
-                SEE OUR PORTFOLIO
-              </a>
               <a href="/order" className="bg-[#A67C52] text-white px-6 py-2 font-semibold rounded hover:bg-[#8B6341] transition">
                 ORDER NOW
               </a>
@@ -476,9 +462,6 @@ export default function Services() {
             />
             <p className="text-xs text-gray-500 mb-6">*Pricing based on square footage of the listing.</p>
             <div className="flex flex-wrap gap-4">
-              <a href="/portfolio" className="border border-[#A67C52] text-[#A67C52] px-6 py-2 font-semibold rounded hover:bg-[#A67C52] hover:text-white transition">
-                SEE OUR PORTFOLIO
-              </a>
               <a href="/order" className="bg-[#A67C52] text-white px-6 py-2 font-semibold rounded hover:bg-[#8B6341] transition">
                 ORDER NOW
               </a>
@@ -504,7 +487,6 @@ export default function Services() {
                 </div>
                 <h4 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h4>
                 <p className="text-gray-600 text-sm mb-2">{item.description}</p>
-                <a href="/portfolio" className="text-[#A67C52] font-semibold text-xs hover:underline">SEE EXAMPLES »</a>
               </div>
             ))}
           </div>
@@ -596,14 +578,9 @@ export default function Services() {
             <div>
               <h3 className="font-bold text-white mb-4">NAVIGATE</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="/terms-of-service" className="hover:text-white transition">Terms Of Service</a></li>
                 <li><a href="/" className="hover:text-white transition">Home</a></li>
                 <li><a href="/services" className="hover:text-white transition">Services & Pricing</a></li>
-                <li><a href="/portfolio" className="hover:text-white transition">Portfolio</a></li>
-                <li><a href="/getting-ready" className="hover:text-white transition">Getting Ready</a></li>
                 <li><a href="/knowledge-base" className="hover:text-white transition">Knowledge Base</a></li>
-                <li><a href="/marketing-resources" className="hover:text-white transition">Marketing Resources</a></li>
-                <li><a href="/videographer-resources" className="hover:text-white transition">Videographer Resources</a></li>
               </ul>
             </div>
             <div>

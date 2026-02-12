@@ -8,7 +8,7 @@ export default function SupportHeader({ activeTab, showSearch = true }: { active
       <header className="bg-gray-900 text-white">
         <div className="max-w-6xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
           <a href="/" className="flex items-center gap-3 hover:opacity-90 transition">
-            <img src="/images/logo-transparent.png" alt="Canopy Stone" className="h-9 w-auto" />
+            <img src="/images/logo-transparent.png" alt="Canopy Stone" className="h-14 w-auto" />
             <span className="text-sm font-medium text-white/90">Canopy Stone Support</span>
           </a>
           <nav className="flex items-center gap-6 text-sm">

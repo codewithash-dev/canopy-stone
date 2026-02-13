@@ -82,19 +82,21 @@ export default function UsingYourPortalPage() {
               <section>
                 <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Popular Articles</h3>
                 <ul className="space-y-2">
-                  {popularArticles.map((article) => (
-                    <li key={article.slug}>
-                      <Link
-                        href={`/knowledge-base/articles/${article.slug}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-[#A67C52] hover:underline flex items-start gap-2"
-                      >
-                        <span className="text-gray-400">📄</span>
-                        {article.title}
-                      </Link>
-                    </li>
-                  ))}
+                  {popularArticles.map((article) =>
+                    article ? (
+                      <li key={article.slug}>
+                        <Link
+                          href={`/knowledge-base/articles/${article.slug}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm text-[#A67C52] hover:underline flex items-start gap-2"
+                        >
+                          <span className="text-gray-400">📄</span>
+                          {article.title}
+                        </Link>
+                      </li>
+                    ) : null
+                  )}
                 </ul>
               </section>
             </div>

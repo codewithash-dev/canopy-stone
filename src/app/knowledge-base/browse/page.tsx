@@ -1,15 +1,16 @@
 'use client';
 
 import SupportHeader from '../../components/SupportHeader';
+import { CategoryIcon, type CategoryIconKey } from '../components/CategoryIcons';
 
-const categories = [
-  { title: 'Getting Started – Basic intro to using your Portal', description: 'How to access and use your Canopy Stone Portal.', articles: '14 Articles', icon: '🏁' },
-  { title: 'Managing Your Media', description: 'Changing the look for the branded display page (each section of the page).', articles: '3 Articles', icon: '🖼️' },
-  { title: 'Customizing Your Single Property Website', description: 'Walkthroughs, tips, and tricks on how to get the most out of your single property website.', articles: '4 Articles', icon: '💻' },
-  { title: 'Managing Your Info', description: 'Updating your phone, email, website, team, company, etc.', articles: '2 Articles', icon: '👤' },
-  { title: 'Marketing Your Listings', description: 'View our guides, tips and tricks, and best practices for marketing your listings.', articles: '5 Articles · 1 Section', icon: '📈' },
-  { title: 'Orders & Billing', description: 'Placing orders, how invoicing works, and viewing past payments.', articles: '4 Articles', icon: '🧾' },
-  { title: 'Social Media', description: 'Guides and tips on how to utilize social media to market your brand and share your listings.', articles: '9 Articles · 5 Sections', icon: '📱' },
+const categories: Array<{ title: string; description: string; articles: string; iconKey: CategoryIconKey; href: string }> = [
+  { title: 'Getting Started – Basic intro to using your Portal', description: 'How to access and use your Canopy Stone Portal.', articles: '14 Articles', iconKey: 'getting-started', href: '/knowledge-base/using-your-portal' },
+  { title: 'Managing Your Media', description: 'Access, view, download, and share your property media.', articles: '5 Articles', iconKey: 'managing-media', href: '/knowledge-base/media-how-to-access' },
+  { title: 'Customizing Your Single Property Website', description: 'Walkthroughs, tips, and tricks on how to get the most out of your single property website.', articles: '4 Articles', iconKey: 'single-property', href: '/knowledge-base/customizing-single-property-website' },
+  { title: 'Managing Your Info', description: 'Updating your phone, email, website, team, company, etc.', articles: '2 Articles', iconKey: 'managing-info', href: '/knowledge-base/managing-your-info' },
+  { title: 'Marketing Your Listings', description: 'View our guides, tips and tricks, and best practices for marketing your listings.', articles: '2 Articles', iconKey: 'marketing', href: '/knowledge-base/marketing-your-listings' },
+  { title: 'Orders & Billing', description: 'Placing orders, how invoicing works, and viewing past payments.', articles: '3 Articles', iconKey: 'orders-billing', href: '/knowledge-base/orders-billing' },
+  { title: 'Social Media', description: 'Guides and tips on how to utilize social media to market your brand and share your listings.', articles: '2 Articles', iconKey: 'social-media', href: '/knowledge-base/social-media' },
 ];
 
 export default function KnowledgeBaseBrowse() {
@@ -33,11 +34,11 @@ export default function KnowledgeBaseBrowse() {
           {categories.map((cat) => (
             <a
               key={cat.title}
-              href="#"
+              href={cat.href || '#'}
               className="block rounded-xl bg-white border border-gray-200 p-6 shadow-sm hover:shadow-md hover:border-[#A67C52]/60 transition"
             >
               <div className="flex items-start gap-3 mb-3">
-                <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-lg">{cat.icon}</div>
+                <CategoryIcon name={cat.iconKey} />
                 <h2 className="text-sm font-semibold text-gray-900 leading-snug">{cat.title}</h2>
               </div>
               <p className="text-xs text-gray-600 mb-3">{cat.description}</p>

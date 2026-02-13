@@ -30,9 +30,12 @@ export default function SupportHeader({ activeTab, showSearch = true }: { active
             >
               Sign In
             </a>
-            <button type="button" className="hidden md:flex items-center gap-2 rounded border border-white/30 px-3 py-1.5 text-sm text-white/90 hover:bg-white/10">
+            <a
+              href="/knowledge-base"
+              className="hidden md:flex items-center gap-2 rounded bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 transition"
+            >
               Add Ticket
-            </button>
+            </a>
             <button type="button" className="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center text-white/80 hover:bg-white/10" aria-label="Information">
               <span className="text-sm font-bold">i</span>
             </button>

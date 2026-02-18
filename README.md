@@ -1,5 +1,8 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+- **Repo:** [github.com/codewithash-dev/canopy-stone](https://github.com/codewithash-dev/canopy-stone)
+- **Live site:** [canopystone.co](https://canopystone.co)
+
 ## Getting Started
 
 First, run the development server:

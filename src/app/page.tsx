@@ -93,6 +93,7 @@ export default function Home() {
             <a href="/#about" className="hover:text-gray-900 transition">About</a>
             <a href="/#faq" className="hover:text-gray-900 transition">FAQ&apos;s</a>
             <a href="/#contact" className="hover:text-gray-900 transition">Contact</a>
+            <a href="/portfolio" className="hover:text-gray-900 transition">Portfolio</a>
             <a href="/knowledge-base" target="_blank" rel="noreferrer" className="hover:text-gray-900 transition">
               Knowledge Base
             </a>

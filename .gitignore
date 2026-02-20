@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# large portfolio videos (add to host or use CDN after deploy)
+public/videos/portfolio/*.mp4

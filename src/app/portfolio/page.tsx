@@ -21,12 +21,12 @@ export default function PortfolioPage() {
           <Link href="/" className="flex items-center flex-shrink-0">
             <img src="/images/logo.png" alt="Canopy Stone" className="h-16 w-auto" />
           </Link>
-          <Link
-            href="/"
+          <a
+            href="mailto:ashley@canopystone.co"
             className="text-sm font-medium text-gray-600 hover:text-gray-900 transition"
           >
-            ← Back to Home
-          </Link>
+            ashley@canopystone.co
+          </a>
         </div>
       </nav>
 
@@ -61,25 +61,23 @@ export default function PortfolioPage() {
 
         {/* Two videos side by side — bigger than photo grid */}
         <section className="mb-12 grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          <div className="rounded-xl overflow-hidden shadow-lg aspect-video bg-gray-900">
-            <video
-              className="w-full h-full object-contain"
-              controls
-              playsInline
-              poster="/images/portfolio/kitchen.png"
-            >
-              <source src="/videos/portfolio/3014-old-timber-way.mp4" type="video/mp4" />
-            </video>
+          <div className="rounded-xl overflow-hidden shadow-lg aspect-video">
+            <iframe
+              src="https://www.youtube.com/embed/KqIDJjNdT6Q"
+              title="3014 Old Timber Way"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="w-full h-full"
+            />
           </div>
-          <div className="rounded-xl overflow-hidden shadow-lg aspect-video bg-gray-900">
-            <video
-              className="w-full h-full object-contain"
-              controls
-              playsInline
-              poster="/images/portfolio/aerial-urban.png"
-            >
-              <source src="/videos/portfolio/drone-video.mp4" type="video/mp4" />
-            </video>
+          <div className="rounded-xl overflow-hidden shadow-lg aspect-video">
+            <iframe
+              src="https://www.youtube.com/embed/HnP8xa8ECLc"
+              title="Drone video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="w-full h-full"
+            />
           </div>
         </section>
 

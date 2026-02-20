@@ -63,7 +63,7 @@ export default function PortfolioPage() {
         <section className="mb-12 grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
           <div className="rounded-xl overflow-hidden shadow-lg aspect-video">
             <iframe
-              src="https://www.youtube.com/embed/KqIDJjNdT6Q"
+              src="https://www.youtube.com/embed/KqIDJjNdT6Q?autoplay=1&mute=1"
               title="3014 Old Timber Way"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
@@ -72,7 +72,7 @@ export default function PortfolioPage() {
           </div>
           <div className="rounded-xl overflow-hidden shadow-lg aspect-video">
             <iframe
-              src="https://www.youtube.com/embed/HnP8xa8ECLc"
+              src="https://www.youtube.com/embed/HnP8xa8ECLc?autoplay=1&mute=1"
               title="Drone video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen

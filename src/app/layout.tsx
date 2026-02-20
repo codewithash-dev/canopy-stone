@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://canopystone.co'),
   title: 'Code with Ash',
   description: 'Portfolio & Projects by Ashley Henderson',
+  icons: {
+    icon: '/images/logo.png',
+    apple: '/images/logo.png',
+  },
   openGraph: {
     title: 'Code with Ash',
     description: 'Portfolio & Projects by Ashley Henderson',
